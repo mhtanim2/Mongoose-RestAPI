@@ -1,0 +1,356 @@
+local> show dbs
+admin    40.00 KiB
+config   84.00 KiB
+sample  144.00 KiB
+school  152.00 KiB
+school> show collections
+Services to db school
+Students
+Teachers
+school> db.students.insertMany([{name:"Mehrab",city:"Donia"},{name:"Namita",city:"Comillah"},{name:"Hafiz",city:"Rajbari"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("63a040806e82895aa1d5f41a"),
+    '1': ObjectId("63a040806e82895aa1d5f41b"),
+    '2': ObjectId("63a040806e82895aa1d5f41c")
+  }
+}
+school> db.Students.insertMany([{name:"Mehrab",city:"Donia"},{name:"Namita",city:"Comillah"},{name:"Hafiz",city:"Rajbari"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("63a040ae6e82895aa1d5f41d"),
+    '1': ObjectId("63a040ae6e82895aa1d5f41e"),
+    '2': ObjectId("63a040ae6e82895aa1d5f41f")
+  }
+}
+school> db.Students.find().pretty()
+[
+  {
+    _id: ObjectId("639ac6cbd0106ac807dbfc1e"),
+    name: 'A',
+    city: 'Dhaka'
+  },
+  {
+    _id: ObjectId("639ac73ad0106ac807dbfc1f"),
+    id: 19100161,
+    name: 'Tanim'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41d"),
+    name: 'Mehrab',
+    city: 'Donia'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41e"),
+    name: 'Namita',
+    city: 'Comillah'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41f"),
+    name: 'Hafiz',
+    city: 'Rajbari'
+  }
+]
+school> db.Students.findOne({name:"Tanim"})
+{
+  _id: ObjectId("639ac73ad0106ac807dbfc1f"),
+  id: 19100161,
+  name: 'Tanim'
+}
+
+school> db.Students.findOne({name:"hafiz"})
+null
+school> db.Students.findOne({name:"Hafiz"})
+{
+  _id: ObjectId("63a040ae6e82895aa1d5f41f"),
+  name: 'Hafiz',
+  city: 'Rajbari'
+}
+school> db.Students.find().pretty()
+[
+  {
+    _id: ObjectId("639ac6cbd0106ac807dbfc1e"),
+    name: 'A',
+    city: 'Dhaka'
+  },
+  {
+    _id: ObjectId("639ac73ad0106ac807dbfc1f"),
+    id: 19100161,
+    name: 'Tanim'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41d"),
+    name: 'Mehrab',
+    city: 'Donia'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41e"),
+    name: 'Namita',
+    city: 'Comillah'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41f"),
+    name: 'Hafiz',
+    city: 'Rajbari'
+  }
+]
+school> show collections
+Services
+Students
+Teachers
+school> db.Teachers.find().pretty()
+[
+  {
+    _id: ObjectId("639ac85bd0106ac807dbfc20"),
+    name: 'Tanim',
+    batch: 2019
+  },
+  {
+    _id: ObjectId("639ac9b9d0106ac807dbfc21"),
+    name: 'kahlik',
+    joined: 2022
+  },
+  {
+    _id: ObjectId("639ac9b9d0106ac807dbfc22"),
+    name: 'tanvir',
+    joined: 2021
+  },
+  {
+    _id: ObjectId("639ac9b9d0106ac807dbfc23"),
+    name: 'Sharif',
+    joined: 2020
+  }
+]
+school> db.Students.find().pretty()
+[
+  {
+    _id: ObjectId("639ac6cbd0106ac807dbfc1e"),
+    name: 'A',
+    city: 'Dhaka'
+  },
+  {
+    _id: ObjectId("639ac73ad0106ac807dbfc1f"),
+    id: 19100161,
+    name: 'Tanim'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41d"),
+    name: 'Mehrab',
+    city: 'Donia'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41e"),
+    name: 'Namita',
+    city: 'Comillah'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41f"),
+    name: 'Hafiz',
+    city: 'Rajbari'
+  }
+]
+school> db.Students.insertMany([{name:"Emon",city:"Donia"},{name:"Roshan",city:"Comillah"},{name:"Tonia",city:"Rajbari"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("63a0485a6e82895aa1d5f420"),
+    '1': ObjectId("63a0485a6e82895aa1d5f421"),
+    '2': ObjectId("63a0485a6e82895aa1d5f422")
+  }
+}
+school> db.Students.insertMany([{name:"Tuli",city:"Paterbag"},{name:"Toma",city:"Chandpur"},{name:"Shimul",city:"ShimulTola"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("63a048886e82895aa1d5f423"),
+    '1': ObjectId("63a048886e82895aa1d5f424"),
+    '2': ObjectId("63a048886e82895aa1d5f425")
+  }
+}
+school> db.Students.find().pattern()
+TypeError: db.Students.find().pattern is not a function
+school> db.Students.find().pretty()
+[
+  {
+    _id: ObjectId("639ac6cbd0106ac807dbfc1e"),
+    name: 'A',
+    city: 'Dhaka'
+  },
+  {
+    _id: ObjectId("639ac73ad0106ac807dbfc1f"),
+    id: 19100161,
+    name: 'Tanim'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41d"),
+    name: 'Mehrab',
+    city: 'Donia'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41e"),
+    name: 'Namita',
+    city: 'Comillah'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41f"),
+    name: 'Hafiz',
+    city: 'Rajbari'
+  },
+  {
+    _id: ObjectId("63a0485a6e82895aa1d5f420"),
+    name: 'Emon',
+    city: 'Donia'
+  },
+  {
+    _id: ObjectId("63a0485a6e82895aa1d5f421"),
+    name: 'Roshan',
+    city: 'Comillah'
+  },
+  {
+    _id: ObjectId("63a0485a6e82895aa1d5f422"),
+    name: 'Tonia',
+    city: 'Rajbari'
+  },
+  {
+    _id: ObjectId("63a048886e82895aa1d5f423"),
+    name: 'Tuli',
+    city: 'Paterbag'
+  },
+  {
+    _id: ObjectId("63a048886e82895aa1d5f424"),
+    name: 'Toma',
+    city: 'Chandpur'
+  },
+  {
+    _id: ObjectId("63a048886e82895aa1d5f425"),
+    name: 'Shimul',
+    city: 'ShimulTola'
+  }
+]
+school> db.Students.findOne({name:"Shimul"})
+{
+  _id: ObjectId("63a048886e82895aa1d5f425"),
+  name: 'Shimul',
+  city: 'ShimulTola'
+}
+school> db.Students.find().limit(5).pretty()
+[
+  {
+    _id: ObjectId("639ac6cbd0106ac807dbfc1e"),
+    name: 'A',
+    city: 'Dhaka'
+  },
+  {
+    _id: ObjectId("639ac73ad0106ac807dbfc1f"),
+    id: 19100161,
+    name: 'Tanim'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41d"),
+    name: 'Mehrab',
+    city: 'Donia'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41e"),
+    name: 'Namita',
+    city: 'Comillah'
+  },
+  {
+    _id: ObjectId("63a040ae6e82895aa1d5f41f"),
+    name: 'Hafiz',
+    city: 'Rajbari'
+  }
+]
+school> db.Students.find({},{city:1,_id:0}).pretty()
+[
+  { city: 'Dhaka' },
+  {},
+  { city: 'Donia' },
+  { city: 'Comillah' },
+  { city: 'Rajbari' },
+  { city: 'Donia' },
+  { city: 'Comillah' },
+  { city: 'Rajbari' },
+  { city: 'Paterbag' },
+  { city: 'Chandpur' },
+  { city: 'ShimulTola' }
+]
+school> db.Students.find({},{city:1}).pretty()
+[
+  { _id: ObjectId("639ac6cbd0106ac807dbfc1e"), city: 'Dhaka' },
+  { _id: ObjectId("639ac73ad0106ac807dbfc1f") },
+  { _id: ObjectId("63a040ae6e82895aa1d5f41d"), city: 'Donia' },
+  { _id: ObjectId("63a040ae6e82895aa1d5f41e"), city: 'Comillah' },
+  { _id: ObjectId("63a040ae6e82895aa1d5f41f"), city: 'Rajbari' },
+  { _id: ObjectId("63a0485a6e82895aa1d5f420"), city: 'Donia' },
+  { _id: ObjectId("63a0485a6e82895aa1d5f421"), city: 'Comillah' },
+  { _id: ObjectId("63a0485a6e82895aa1d5f422"), city: 'Rajbari' },
+  { _id: ObjectId("63a048886e82895aa1d5f423"), city: 'Paterbag' },
+  { _id: ObjectId("63a048886e82895aa1d5f424"), city: 'Chandpur' },
+  { _id: ObjectId("63a048886e82895aa1d5f425"), city: 'ShimulTola' }
+]
+
+
+school> db.Students.find({},{city:1,_id:0}).pretty()
+[
+  { city: 'Dhaka' },
+  {},
+  { city: 'Donia' },
+  { city: 'Comillah' },
+  { city: 'Rajbari' },
+  { city: 'Donia' },
+  { city: 'Comillah' },
+  { city: 'Rajbari' },
+  { city: 'Paterbag' },
+  { city: 'Chandpur' },
+  { city: 'ShimulTola' }
+]
+school> db.Students.find({city:"Donia"},{city:1,_id:0}).pretty()
+[ { city: 'Donia' }, { city: 'Donia' } ]
+school> db.Students.find({city:"Donia"},{city:1,_id:0}).pretty()
+[ { city: 'Donia' }, { city: 'Donia' } ]
+school> db.Students.find({city:{$eq:"Comillah"}},{city:1,_id:0}).pretty()
+[ { city: 'Comillah' }, { city: 'Comillah' } ]
+school> db.Students.find({city:{$eq:"Comillah"}},{_id:0}).pretty()
+[
+  { name: 'Namita', city: 'Comillah' },
+  { name: 'Roshan', city: 'Comillah' }
+]
+school> db.Students.find({city:{$ne:"Comillah"}},{_id:0}).pretty()
+[
+  { name: 'A', city: 'Dhaka' },
+  { id: 19100161, name: 'Tanim' },
+  { name: 'Mehrab', city: 'Donia' },
+  { name: 'Hafiz', city: 'Rajbari' },
+  { name: 'Emon', city: 'Donia' },
+  { name: 'Tonia', city: 'Rajbari' },
+  { name: 'Tuli', city: 'Paterbag' },
+  { name: 'Toma', city: 'Chandpur' },
+  { name: 'Shimul', city: 'ShimulTola' }
+]
+school> db.Students.find({city:{$in:["Comillah","Donia","Dhaka","Rajbari"]}},{_id:0}).pretty()
+[
+  { name: 'A', city: 'Dhaka' },
+  { name: 'Mehrab', city: 'Donia' },
+  { name: 'Namita', city: 'Comillah' },
+  { name: 'Hafiz', city: 'Rajbari' },
+  { name: 'Emon', city: 'Donia' },
+  { name: 'Roshan', city: 'Comillah' },
+  { name: 'Tonia', city: 'Rajbari' }
+]
+school> db.Students.find({city:{$ni:["Comillah","Donia","Dhaka","Rajbari"]}},{_id:0}).pretty()
+MongoServerError: unknown operator: $ni
+school> db.Students.find({city:{$nin:["Comillah","Donia","Dhaka","Rajbari"]}},{_id:0}).pretty()
+[
+  { id: 19100161, name: 'Tanim' },
+  { name: 'Tuli', city: 'Paterbag' },
+  { name: 'Toma', city: 'Chandpur' },
+  { name: 'Shimul', city: 'ShimulTola' }
+]
+school> db.Students.find({$and:[{city:{$eq:"Donia"}},{name:{$eq:"Mehrab"}}]},{_id:0}).pretty()
+[ { name: 'Mehrab', city: 'Donia' } ]
+school> db.Students.find({$and:[{city:{$eq:"Donia"}},{name:{$in:["Mehrab","Emon"]}}]},{_id:0}).pretty()
+[ { name: 'Mehrab', city: 'Donia' }, { name: 'Emon', city: 'Donia' } ]
+school>
