@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "a5982902-8293-4724-b1f8-6ab6e810416a",
+		"name": "mongooseRestApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24701423"
+	},
+	"item": [
+		{
+			"name": "default",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mehrab Tanim\",\r\n    \"roll\": \"21\",\r\n    \"class\": \"10th\",\r\n    \"ranking\":\"Good\",\r\n    \"gmail\":\"mehrab2@gmail.com\",\r\n    \"phone\":\"01666826622\",\r\n    \"grade\":\"A+\",\r\n    \"courses\":[\"Bangla\",\"English\",\"Math\",\"Physics\",\"ICT\",\"Chemistry\"]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}",
+					"host": [
+						"{{base}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "satatus",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mahir\",\r\n    \"roll\": \"63\",\r\n    \"class\": \"10th\",\r\n    \"ranking\":\"Middle\",\r\n    \"gmail\":\"mahir2@gmail.com\",\r\n    \"phone\":\"01666886622\",\r\n    \"grade\":\"B+\",\r\n    \"courses\":[\"Bangla\",\"English\",\"Math\",\"Physics\",\"ICT\",\"Chemistry\"]\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/status",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "udateStudent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Tahmid\",\r\n    \"roll\": \"28\",\r\n    \"class\": \"11th\",\r\n    \"ranking\":\"Middle\",\r\n    \"gmail\":\"tahmid2@gmail.com\",\r\n    \"phone\":\"01666972622\",\r\n    \"grade\":\"A\",\r\n    \"courses\":[\"Bangla\",\"GK\",\"English\",\"Math\",\"Accounting\",\"ICT\",\"Finance\"]\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/insertStudent",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"insertStudent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "studentsList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/students",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findStudentsQuery",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/findStudentsQuery",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"findStudentsQuery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findStudentsLogicalQuery",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/findStudentsLogicalQuery",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"findStudentsLogicalQuery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findIndividualStudent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/student/:id",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"student",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "63a59858a949aa63aed0b0c0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateStudent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"grade\":\"A-\",\r\n    \"courses\":[\"Bangla\",\"Banking\",\"GK\",\"English\",\"Accounting\",\"ICT\",\"Finance\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/updateStudent/:id",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"updateStudent",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "63a59858a949aa63aed0b0c0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteStudent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/deleteStudent/:id",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"deleteStudent",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "63a0b0d090a8cbbbdb51cb8f"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base",
+			"value": "http://localhost:4444/api/v1",
+			"type": "string"
+		}
+	]
+}
